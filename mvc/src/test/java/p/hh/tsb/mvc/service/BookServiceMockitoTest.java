@@ -2,38 +2,27 @@ package p.hh.tsb.mvc.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 import p.hh.tsb.mvc.model.Book;
 import p.hh.tsb.mvc.repository.BookRepository;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-@RunWith(SpringRunner.class)
-public class BookServiceTest {
+@RunWith(MockitoJUnitRunner.class)
+public class BookServiceMockitoTest {
 
-    @TestConfiguration
-    static class ContextConfiguration {
-
-        @Bean
-        @Autowired
-        public BookService bookService(BookRepository bookRepository) {
-            return new BookService(bookRepository);
-        }
-    }
-
-    @Autowired
+    @InjectMocks
     private BookService bookService;
 
-    @MockBean
+    @Mock
     private BookRepository bookRepository;
 
 
