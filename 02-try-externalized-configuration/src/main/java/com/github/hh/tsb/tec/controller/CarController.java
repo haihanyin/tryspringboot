@@ -1,7 +1,9 @@
 package com.github.hh.tsb.tec.controller;
 
 import com.github.hh.tsb.tec.model.Car;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +18,20 @@ import java.util.UUID;
 @RequestMapping("/car")
 public class CarController {
 
-    @Value("${tsb.tec.prop.from}")
+
     private String tecProperty;
+
+    @Autowired
+    public void setTecProperty(@Value("${tsb.tec.prop.from}")String tecProperty) {
+        this.tecProperty = tecProperty;
+    }
+
+    private Environment environment;
+
+    @Autowired
+    public void setEnvironment(Environment environment) {
+        this.environment = environment;
+    }
 
     private final static List<Car> CARS;
 
