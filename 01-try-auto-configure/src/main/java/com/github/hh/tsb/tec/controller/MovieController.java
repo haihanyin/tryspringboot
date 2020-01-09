@@ -1,6 +1,8 @@
 package com.github.hh.tsb.tec.controller;
 
 import com.github.hh.tsb.tec.model.Movie;
+import com.github.mocklib.MovieService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,22 +17,16 @@ import java.util.UUID;
 @RequestMapping("/movie")
 public class MovieController {
 
-    private final static List<Movie> MOVIES;
+    private MovieService movieService;
 
-    static {
-        List<Movie> movieList = new ArrayList<>();
-        movieList.add(new Movie(UUID.randomUUID().toString(), "3 Idiots"));
-        movieList.add(new Movie(UUID.randomUUID().toString(), "Black Hawk Down"));
-        movieList.add(new Movie(UUID.randomUUID().toString(), "Cast Away"));
-        movieList.add(new Movie(UUID.randomUUID().toString(), "Good Burger"));
-        movieList.add(new Movie(UUID.randomUUID().toString(), "Hero"));
-        MOVIES = Collections.unmodifiableList(movieList);
+    @Autowired
+    public MovieController(MovieService movieService) {
+        this.movieService = movieService;
     }
 
     @GetMapping("/get/{index}")
     public Movie getBook(@PathVariable int index) {
-        Movie movie = MOVIES.get(index);
-        return movie;
+        return movieService.getMovie(index);
     }
 
 }
