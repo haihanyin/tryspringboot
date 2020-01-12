@@ -18,13 +18,11 @@ import java.util.UUID;
 @RequestMapping("/car")
 public class CarController {
 
-
+    @Value("${tsb.tec.prop.from}")
     private String tecProperty;
 
-    @Autowired
-    public void setTecProperty(@Value("${tsb.tec.prop.from}")String tecProperty) {
-        this.tecProperty = tecProperty;
-    }
+    @Value("${another.prop}")
+    private String anotherProp;
 
     private Environment environment;
 

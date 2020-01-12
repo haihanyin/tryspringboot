@@ -12,7 +12,6 @@ import org.springframework.test.web.servlet.MvcResult;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
-@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK, classes = TecApplication.class)
 @AutoConfigureMockMvc
 @TestPropertySource(properties = "tsb.tec.prop.from=TestPropertySource")

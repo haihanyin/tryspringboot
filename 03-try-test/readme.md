@@ -1,0 +1,9 @@
+MutablePropertySources is the container for all PropertySources
+
+StandardServletEnvironment
+StandardEnvironment
+RandomValuePropertySource
+ConfigFileApplicationListener getSearchLocations()
+PropertySourcesPlaceholderConfigurer addLast
+
+https://juejin.im/post/5e0b6d2ef265da5d3c6ddcb4
