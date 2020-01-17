@@ -1,0 +1,11 @@
+GET http://localhost:8090/fruit/get/1
+
+###
+
+GET http://localhost:8090/actuator/info
+
+###
+
+GET http://localhost:8090/actuator/metrics/jvm.memory.max
+
+###

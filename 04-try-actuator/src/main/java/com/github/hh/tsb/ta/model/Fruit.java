@@ -1,4 +1,4 @@
-package com.github.hh.tsb.tec.model;
+package com.github.hh.tsb.ta.model;
 
 public class Fruit {
 

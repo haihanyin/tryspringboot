@@ -1,6 +1,6 @@
-package com.github.hh.tsb.tec.controller;
+package com.github.hh.tsb.ta.controller;
 
-import com.github.hh.tsb.tec.model.Fruit;
+import com.github.hh.tsb.ta.model.Fruit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;

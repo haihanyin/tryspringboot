@@ -1,4 +1,4 @@
-package com.github.hh.tsb.tec;
+package com.github.hh.tsb.ta;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
